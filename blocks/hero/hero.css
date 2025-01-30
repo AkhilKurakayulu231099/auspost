@@ -18,10 +18,10 @@
 /* Positioning the text block on top of the image */
 .hero-wrapper > .hero > div > div:nth-of-type(2) {
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   background-color: white;
-  z-index: 1;
+  z-index: 1;  /* Make sure the text block is on top */
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   font-size: 20px;
   margin-bottom: 20px;
@@ -39,6 +39,7 @@
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
 /* Paragraph styling inside the overlay */
 .hero-wrapper > .hero > div > div:nth-of-type(2) p {
   font-size: 20px;
