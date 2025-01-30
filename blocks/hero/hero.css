@@ -1,37 +1,69 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
-}
-
-.hero {
+/* Container wrapping the image and text block */
+.hero-wrapper {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
-}
-
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-.hero img {
-  object-fit: cover;
   width: 100%;
-  height: 100%;
+  overflow: hidden;
+  height: 300px;
+  max-width: 100%;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
+/* Ensure the image fills the container */
+.hero-wrapper > .hero > div > div > picture img {
+  width: 100%; /* Make the image take the full width */
+  height: 100%; /* Ensure the image height is 100% */
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+  display: block; /* Remove any gaps below the image */
+}
+
+/* Positioning the text block on top of the image */
+.hero-wrapper > .hero > div > div:nth-of-type(2) {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-color: white;
+  z-index: 0;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: 550px;
+  height: 190px;
+  padding: 60px 50px 45px;
+  justify-content: flex-end;
+}
+
+/* Heading style inside the overlay */
+.hero-wrapper > .hero > div > div:nth-of-type(2) h1 {
+  color: #005cb9;
+  font-size: 30px;
+  line-height: 1.1em;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+/* Paragraph styling inside the overlay */
+.hero-wrapper > .hero > div > div:nth-of-type(2) p {
+  font-size: 20px;
+  color: black;
+  line-height: 1.8em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .hero-wrapper > .hero > div > div:nth-of-type(2) {
+    width: 80%; /* Adjust width on smaller screens */
+    left: 10%; /* Adjust position */
+    padding: 15px;
+  }
+
+  .hero-wrapper > .hero > div > div:nth-of-type(2) h1 {
+    font-size: 24px; /* Reduce heading size on mobile */
+  }
+
+  .hero-wrapper > .hero > div > div:nth-of-type(2) p {
+    font-size: 16px; /* Reduce paragraph size on mobile */
+  }
+
+  /* Adjust image height for smaller screens */
+  .hero-wrapper > .hero > div > div > picture img {
+    height: 200px;
   }
 }
